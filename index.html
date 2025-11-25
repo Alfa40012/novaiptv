@@ -33,7 +33,7 @@
     <meta property="og:url" content="https://novaiptv.fun/" />
     <meta
       property="og:image"
-      content="https://f.top4top.io/p_36166ccs60.jpe"
+      content="https://novaiptv.fun/og-image.jpg"
     />
     <meta property="og:site_name" content="Nova IPTV Original" />
     <meta property="og:locale" content="ar_EG" />
@@ -46,18 +46,18 @@
     />
     <meta
       name="twitter:image"
-      content="https://f.top4top.io/p_36166ccs60.jpe"
+      content="https://novaiptv.fun/og-image.jpg"
     />
 
     <meta name="robots" content="index, follow" />
     <meta name="googlebot" content="index, follow" />
     <link rel="canonical" href="https://novaiptv.fun/" />
 
-    <!-- فافيكون من نفس رابط الصورة -->
+    <!-- فافيكون (حط أي صورة PNG أو ICO عندك بنفس الاسم) -->
     <link
       rel="icon"
-      type="image/jpeg"
-      href="https://f.top4top.io/p_36166ccs60.jpe"
+      type="image/png"
+      href="favicon.png"
     />
 
     <link
@@ -77,7 +77,8 @@
       :root {
         --primary-red: #d60000;
         --gold-color: #e5c15a;
-        --dark-bg: #0b0b0f;
+        --dark-bg: #03040b;
+        --whatsapp-green: #25d366;
       }
 
       body {
@@ -85,32 +86,71 @@
         color: #fff;
         overflow-x: hidden;
 
-        /* خلفية داكنة + جريد + لمعة */
-        background-color: #050509;
+        /* خلفية IPTV احترافية (نيوون + جريد) */
+        background-color: var(--dark-bg);
         background-image:
-          radial-gradient(circle at top, rgba(214, 0, 0, 0.32), transparent 55%),
-          radial-gradient(circle at bottom, rgba(229, 193, 90, 0.18), transparent 55%),
-          linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+          radial-gradient(circle at 0% 0%, rgba(155, 89, 182, 0.55), transparent 60%),
+          radial-gradient(circle at 100% 100%, rgba(214, 0, 0, 0.55), transparent 60%),
+          radial-gradient(circle at 20% 80%, rgba(0, 151, 230, 0.35), transparent 55%),
+          linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
         background-size:
           100% 100%,
           100% 100%,
-          60px 60px,
-          60px 60px;
+          100% 100%,
+          70px 70px,
+          70px 70px;
         background-attachment: fixed;
       }
 
-      /* --- تأثير اللمعة على كلمة NOVA --- */
+      /* --- لوجو نصّي احترافي NOVA IPTV --- */
+      .logo-box {
+        padding: 6px 16px;
+        border-radius: 14px;
+        background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.16), transparent 60%),
+          linear-gradient(120deg, #1f1f2b, #06060b);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        box-shadow:
+          0 0 18px rgba(255, 255, 255, 0.18),
+          0 0 30px rgba(214, 0, 0, 0.65);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .logo-main {
+        font-weight: 900;
+        font-size: 1.45rem;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+        background: linear-gradient(115deg, #ffffff, #ffe49a, #ff284b, #ffe49a);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        text-shadow:
+          0 0 12px rgba(255, 255, 255, 0.9),
+          0 0 22px rgba(239, 159, 63, 0.85),
+          0 0 36px rgba(214, 0, 0, 0.7);
+      }
+
+      .logo-sub {
+        font-weight: 700;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.25em;
+        color: #f1f1f1;
+        opacity: 0.9;
+      }
+
       .nova-glow {
         background: linear-gradient(120deg, #ffffff, #ffe49a, #ff284b, #ffe49a);
         background-clip: text;
         -webkit-background-clip: text;
         color: transparent;
         text-shadow:
-          0 0 12px rgba(255, 255, 255, 0.9),
+          0 0 10px rgba(255, 255, 255, 0.9),
           0 0 20px rgba(239, 159, 63, 0.85),
-          0 0 35px rgba(214, 0, 0, 0.7);
-        letter-spacing: 1px;
+          0 0 32px rgba(214, 0, 0, 0.7);
       }
 
       .nova-glow-small {
@@ -126,42 +166,15 @@
       /* --- Navbar --- */
       .navbar {
         background-color: rgba(0, 0, 0, 0.9);
-        backdrop-filter: blur(6px);
+        backdrop-filter: blur(8px);
         padding: 12px 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
       }
 
       .navbar-brand {
         display: flex;
         align-items: center;
         gap: 10px;
-      }
-
-      .nova-logo {
-        height: 40px;
-        width: auto;
-        border-radius: 6px;
-        filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
-      }
-
-      .navbar-brand-text {
-        font-weight: 900;
-        font-size: 1.6rem;
-        margin: 0;
-        display: flex;
-        align-items: baseline;
-        gap: 4px;
-      }
-
-      .navbar-brand-text span.nova {
-        font-size: 1.4rem;
-      }
-
-      .navbar-brand-text span.iptv {
-        font-size: 1.1rem;
-        color: #f1f1f1;
-        text-transform: uppercase;
-        letter-spacing: 1px;
       }
 
       .nav-link {
@@ -199,9 +212,6 @@
       .hero {
         padding: 130px 0 110px;
         min-height: 90vh;
-        background:
-          radial-gradient(circle at top, rgba(255, 255, 255, 0.06), transparent 60%),
-          linear-gradient(135deg, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.9));
         position: relative;
       }
 
@@ -211,8 +221,8 @@
         inset: 0;
         background: radial-gradient(
           circle at bottom,
-          rgba(214, 0, 0, 0.5),
-          transparent 60%
+          rgba(0, 0, 0, 0.6),
+          transparent 65%
         );
         pointer-events: none;
       }
@@ -295,7 +305,7 @@
       /* --- Sections --- */
       .features-section {
         padding: 70px 0;
-        background-color: #101018;
+        background-color: rgba(8, 9, 20, 0.9);
       }
 
       .section-title {
@@ -315,7 +325,7 @@
       }
 
       .feature-box {
-        background-color: #0c0c12;
+        background-color: #0c0c14;
         border-radius: 16px;
         padding: 30px 24px;
         position: relative;
@@ -331,7 +341,7 @@
         width: 90px;
         height: 90px;
         border-radius: 50%;
-        background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent);
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.25), transparent);
         opacity: 0;
         top: -20px;
         left: -20px;
@@ -398,7 +408,7 @@
 
       .content-section {
         padding: 70px 0;
-        background-color: #06060a;
+        background-color: rgba(4, 5, 12, 0.95);
       }
 
       .content-img {
@@ -422,7 +432,7 @@
 
       .pricing-section {
         padding: 70px 0;
-        background-color: #11111a;
+        background-color: #10101c;
       }
 
       .plan-card {
@@ -489,7 +499,7 @@
 
       .testimonials-section {
         padding: 70px 0;
-        background-color: #07070c;
+        background-color: #05050c;
         background-image: linear-gradient(
             rgba(255, 255, 255, 0.03) 1px,
             transparent 1px
@@ -504,7 +514,7 @@
         content: "";
         position: absolute;
         inset: 0;
-        background: radial-gradient(circle, transparent 20%, #07070c 82%);
+        background: radial-gradient(circle, transparent 20%, #05050c 82%);
         pointer-events: none;
       }
 
@@ -564,7 +574,7 @@
 
       .faq-section {
         padding: 70px 0;
-        background-color: #101018;
+        background-color: #10101c;
       }
 
       .accordion-item {
@@ -619,22 +629,45 @@
       }
 
       .social-icons a {
-        color: #fff;
         margin-right: 10px;
         font-size: 1.4rem;
+        text-decoration: none;
       }
 
+      /* لون الواتساب الأخضر الرسمي في الفوتر */
+      .social-icons i.bi-whatsapp {
+        color: var(--whatsapp-green);
+      }
+
+      .social-icons i.bi-facebook {
+        color: #1877f2;
+      }
+
+      .social-icons i.bi-telegram {
+        color: #0088cc;
+      }
+
+      .social-icons i {
+        transition: 0.2s;
+      }
+
+      .social-icons i:hover {
+        transform: translateY(-2px);
+        filter: brightness(1.2);
+      }
+
+      /* زر الواتساب الأخضر الأصلي */
       .whatsapp-float {
         position: fixed;
         bottom: 26px;
         left: 26px;
-        background-color: #25d366;
+        background-color: var(--whatsapp-green); /* أخضر واتساب */
         color: #fff;
-        width: 58px;
-        height: 58px;
+        width: 60px;
+        height: 60px;
         border-radius: 50%;
         text-align: center;
-        font-size: 30px;
+        font-size: 32px;
         box-shadow: 0 0 18px rgba(0, 0, 0, 0.5);
         z-index: 1000;
         display: flex;
@@ -646,7 +679,7 @@
       }
 
       .whatsapp-float:hover {
-        background-color: #128c7e;
+        background-color: #20ba57;
         transform: scale(1.08);
       }
 
@@ -655,7 +688,7 @@
           box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
         }
         70% {
-          box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+          box-shadow: 0 0 0 16px rgba(37, 211, 102, 0);
         }
         100% {
           box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
@@ -669,6 +702,12 @@
         .hero p.hero-sub {
           font-size: 0.95rem;
         }
+        .logo-box {
+          padding: 4px 12px;
+        }
+        .logo-main {
+          font-size: 1.25rem;
+        }
       }
     </style>
   </head>
@@ -677,15 +716,10 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
       <div class="container">
         <a class="navbar-brand" href="#">
-          <!-- لوجو من الرابط مباشرة -->
-          <img
-            src="https://f.top4top.io/p_36166ccs60.jpe"
-            alt="Nova IPTV Logo"
-            class="nova-logo"
-          />
-          <div class="navbar-brand-text">
-            <span class="nova nova-glow-small">NOVA</span>
-            <span class="iptv">IPTV</span>
+          <!-- لوجو نصّي بدون أي صورة -->
+          <div class="logo-box">
+            <span class="logo-main">NOVA</span>
+            <span class="logo-sub">IPTV</span>
           </div>
         </a>
         <button
@@ -1346,7 +1380,7 @@
               "
             >
               <div class="card-body">
-                <i class="bi bi-whatsapp display-4 text-success mb-3"></i>
+                <i class="bi bi-whatsapp display-4" style="color: #25d366"></i>
                 <h3 class="fw-bold text-white">تواصل فوراً عبر الواتساب</h3>
                 <p class="text-muted mb-4">
                   اضغط على الزر بالأسفل لفتح محادثة مباشرة معنا. فريق الدعم جاهز
@@ -1447,7 +1481,7 @@
       </div>
     </footer>
 
-    <!-- WHATSAPP FLOAT -->
+    <!-- WHATSAPP FLOAT - أيقونة خضرا أصلية -->
     <a
       href="https://wa.me/201098256570?text=السلام%20عليكم%20عايز%20استفسر%20عن%20اشتراك%20Nova%20IPTV%20TV"
       class="whatsapp-float"

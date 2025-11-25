@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://raval7.vercel.app/sitemap.xml
+
+Sitemap: https://novaiptv.fun/sitemap.xml

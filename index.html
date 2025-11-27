@@ -54,7 +54,7 @@
     <!-- فافيكون -->
     <link rel="icon" type="image/png" href="favicon.png" />
 
-    <!-- Bootstrap & Icons -->
+    <!-- Bootstrap / Icons / Fonts -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css"
@@ -68,8 +68,8 @@
       rel="stylesheet"
     />
 
-    <!-- PayPal SDK (الجزء 1 – مرة واحدة في الصفحة) -->
-    <script 
+    <!-- PayPal SDK (الجزء 1 – مرة واحدة فى الصفحة) -->
+    <script
       src="https://www.paypal.com/sdk/js?client-id=BAAiAkPhXem9KjhI4oBGtqv74KoTrk78f4J-2SYeLyR4d5gGtgLQP0OtlC1L_1h3b_8tugdqezyBkhcowA&components=hosted-buttons&disable-funding=venmo&currency=USD">
     </script>
 
@@ -118,10 +118,10 @@
         border-radius: 10px;
       }
 
-      /* --- لوجو --- */
+      /* --- لوجو NOVA IPTV • 2026 --- */
       .logo-box {
-        width: 106px;
-        height: 54px;
+        width: 118px;
+        height: 58px;
         padding: 6px 0;
         border-radius: 18px;
         background:
@@ -154,9 +154,9 @@
 
       .logo-sub {
         font-weight: 700;
-        font-size: 0.6rem;
+        font-size: 0.65rem;
         text-transform: uppercase;
-        letter-spacing: 0.25em;
+        letter-spacing: 0.18em;
         color: #f1f1f1;
         opacity: 0.9;
       }
@@ -450,7 +450,7 @@
       /* PRICING */
       .pricing-section {
         padding: 60px 0;
-        background-color: #10101c;
+        background: radial-gradient(circle at top, #2b0f18, #10101c);
       }
 
       .plan-card {
@@ -513,6 +513,11 @@
       .best-plan {
         transform: scale(1.03);
         box-shadow: 0 0 40px rgba(241, 196, 15, 0.45);
+      }
+
+      /* PayPal container */
+      #paypal-container-JSSXH6M8WSEJG {
+        margin-top: 8px;
       }
 
       /* TESTIMONIALS */
@@ -731,10 +736,8 @@
         }
 
         .logo-box {
-          width: 96px;
-          height: 50px;
-          padding: 4px 0;
-          border-radius: 16px;
+          width: 108px;
+          height: 52px;
         }
 
         .logo-main {
@@ -750,6 +753,7 @@
       }
     </style>
   </head>
+
   <body>
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
@@ -757,7 +761,7 @@
         <a class="navbar-brand" href="#">
           <div class="logo-box">
             <span class="logo-main">NOVA</span>
-            <span class="logo-sub">IPTV</span>
+            <span class="logo-sub">IPTV • 2026</span>
           </div>
         </a>
         <button
@@ -811,7 +815,7 @@
         <h1>
           سيرفر
           <span class="nova-glow">NOVA</span>
-          الأصلي 2025
+          الأصلي 2026
         </h1>
 
         <p class="hero-sub">
@@ -823,7 +827,7 @@
         </p>
 
         <div class="hero-highlights">
-          <span><i class="bi bi-collection-play"></i> Bine sport+16000 قناة بث مباشر</span>
+          <span><i class="bi bi-collection-play"></i> +16000 قناة بث مباشر</span>
           <span><i class="bi bi-film"></i> مكتبة أفلام ومسلسلات محدثة يومياً</span>
           <span><i class="bi bi-shield-check"></i> اشتراك رسمي NOVAIPTV من الوكيل المعتمد</span>
           <span><i class="bi bi-lightning-charge"></i> دعم سريع عبر الواتساب</span>
@@ -1067,21 +1071,27 @@
 
         <!-- دفع دولي + PayPal -->
         <div class="text-center mt-4">
+          <p class="text-secondary mb-2">
+            دفع اشتراك سنوي من جميع أنحاء العالم 🌍
+          </p>
+
+          <!-- بوابة الدفع (فيزا / ماستر كارد) -->
           <a
             href="https://cube.paysky.io:6006/?POID=Xi9kNQOf&MID=2288913867&TID=58541757"
             target="_blank"
             rel="noopener noreferrer"
             class="btn-outline-light-custom mb-3"
           >
-            دفع اشتراك سنوي من جميع أنحاء العالم 🌍
+            دفع بالبطاقة البنكية (Visa / MasterCard)
           </a>
 
-          <p class="text-secondary small mb-2">
-            أو ادفع بأمان عبر PayPal 💳
-          </p>
+          <p class="text-secondary small mb-2">أو ادفع بأمان عبر PayPal 💳</p>
 
-          <!-- الجزء 2: زر PayPal بالقرب من الباقات -->
-          <div id="paypal-container-JSSXH6M8WSEJG" class="d-inline-block"></div>
+          <!-- زر PayPal الرسمي (Hosted Button) -->
+          <div
+            id="paypal-container-JSSXH6M8WSEJG"
+            class="d-flex justify-content-center"
+          ></div>
         </div>
       </div>
     </section>
@@ -1543,6 +1553,7 @@
             </div>
           </div>
         </div>
+
         <div class="text-center mt-3 pt-3 border-top border-secondary">
           <p class="mb-0 text-secondary small">
             جميع الحقوق محفوظة Nova IPTV TV © 2026
@@ -1568,15 +1579,17 @@
       crossorigin="anonymous"
     ></script>
 
-    <!-- تفعيل زر PayPal (الجزء 2) -->
+    <!-- تفعيل زر PayPal Hosted Button (الجزء 2) -->
     <script>
-      if (window.paypal) {
-        paypal
-          .HostedButtons({
-            hostedButtonId: "JSSXH6M8WSEJG",
-          })
-          .render("#paypal-container-JSSXH6M8WSEJG");
-      }
+      document.addEventListener("DOMContentLoaded", function () {
+        if (window.paypal && paypal.HostedButtons) {
+          paypal
+            .HostedButtons({
+              hostedButtonId: "JSSXH6M8WSEJG",
+            })
+            .render("#paypal-container-JSSXH6M8WSEJG");
+        }
+      });
     </script>
   </body>
 </html>

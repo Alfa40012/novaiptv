@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://novaiptv.fun/sitemap.xml
+Sitemap: 
+https://novaiptv.fun//sitemap.xml
